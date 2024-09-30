@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import {
   ActivityIndicator,
+  Alert,
   Button,
   Image,
   ImageBackground,
@@ -121,14 +122,40 @@ export default function Index() {
           </Text>
         </View>
 
+        {/* Alert is one API. There are a lot APIs to enhance the react native */}
+        {/* https://reactnative.dev/docs/alert */}
         <View style={{ paddingVertical: 10 }}>
           <Button
-            title="Click me"
-            onPress={() => alert('Button clicked')}
+            title="Alert Button"
+            onPress={() => Alert.alert('Button clicked')}
             color="midnightblue"
           />
         </View>
-
+        <View style={{ paddingVertical: 10 }}>
+          <Button
+            title="Alert Button 2"
+            onPress={() => Alert.alert('Button clicked', '2nd param text')}
+            color="midnightblue"
+          />
+        </View>
+        <View style={{ paddingVertical: 10 }}>
+          <Button
+            title="Alert Button 3"
+            onPress={() =>
+              Alert.alert('Button clicked', '3rd param array of objects', [
+                {
+                  text: 'Cancel',
+                  onPress: () => console.log('Cancel Pressed'),
+                },
+                {
+                  text: 'OK',
+                  onPress: () => console.log('OK Pressed'),
+                },
+              ])
+            }
+            color="midnightblue"
+          />
+        </View>
         <View>
           <Pressable
             onPress={() => console.log('Component Pressed')}
