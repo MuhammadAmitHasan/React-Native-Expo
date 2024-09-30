@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import {
+  ActivityIndicator,
   Button,
   Image,
   ImageBackground,
@@ -16,11 +17,21 @@ const logoImage = require('../assets/images/icon.png');
 export default function Index() {
   const [modalVisible, setModalVisible] = useState(false);
 
-  // https:reactnative.dev/docs/statusbar
-  <StatusBar backgroundColor="midnightblue" barStyle="default" />;
-
   return (
     <ScrollView style={{ paddingVertical: 20 }}>
+      <StatusBar backgroundColor="midnightblue" barStyle="default" />
+      {/* Activity Indicator */}
+      <View style={{ paddingVertical: 20 }}>
+        <ActivityIndicator />
+        <ActivityIndicator size="large" color="midnightblue" />
+        <ActivityIndicator
+          size="large"
+          color="midnightblue"
+          // control visibility
+          animating={false}
+        />
+      </View>
+
       <View style={{ paddingHorizontal: 5 }}>
         <View>
           {/* https://reactnative.dev/docs/pressable */}
