@@ -6,6 +6,7 @@ import {
   Modal,
   Pressable,
   ScrollView,
+  StatusBar,
   Text,
   View,
 } from 'react-native';
@@ -14,6 +15,9 @@ const logoImage = require('../assets/images/icon.png');
 
 export default function Index() {
   const [modalVisible, setModalVisible] = useState(false);
+
+  // https:reactnative.dev/docs/statusbar
+  <StatusBar backgroundColor="midnightblue" barStyle="default" />;
 
   return (
     <ScrollView style={{ paddingVertical: 20 }}>
